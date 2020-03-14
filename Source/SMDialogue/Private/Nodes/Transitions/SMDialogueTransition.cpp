@@ -14,7 +14,7 @@ USMDialogueTransition::USMDialogueTransition() : Super()
 
 bool USMDialogueTransition::IsGoingToChoiceNode() const
 {
-	if(USMStateInstance* Next = GetNextStateInstance())
+	if(USMStateInstance_Base* Next = GetNextStateInstance())
 	{
 		return Next->GetClass()->IsChildOf<USMDialogueChoiceNode>();
 	}
@@ -24,7 +24,7 @@ bool USMDialogueTransition::IsGoingToChoiceNode() const
 
 bool USMDialogueTransition::IsLeavingChoiceNode() const
 {
-	if (USMStateInstance* Previous = GetPreviousStateInstance())
+	if (USMStateInstance_Base* Previous = GetPreviousStateInstance())
 	{
 		return Previous->GetClass()->IsChildOf<USMDialogueChoiceNode>();
 	}
@@ -34,7 +34,7 @@ bool USMDialogueTransition::IsLeavingChoiceNode() const
 
 bool USMDialogueTransition::IsGoingToDialogueNode(bool bIncludeChoiceAsDialogue) const
 {
-	if (USMStateInstance* Next = GetNextStateInstance())
+	if (USMStateInstance_Base* Next = GetNextStateInstance())
 	{
 		return bIncludeChoiceAsDialogue ? Next->GetClass()->IsChildOf<USMDialogueNode_Base>() : Next->GetClass()->IsChildOf<USMDialogueNode>();
 	}
@@ -44,7 +44,7 @@ bool USMDialogueTransition::IsGoingToDialogueNode(bool bIncludeChoiceAsDialogue)
 
 bool USMDialogueTransition::IsLeavingDialogueNode(bool bIncludeChoiceAsDialogue) const
 {
-	if (USMStateInstance* Previous = GetPreviousStateInstance())
+	if (USMStateInstance_Base* Previous = GetPreviousStateInstance())
 	{
 		return bIncludeChoiceAsDialogue ? Previous->GetClass()->IsChildOf<USMDialogueNode_Base>() : Previous->GetClass()->IsChildOf<USMDialogueNode>();
 	}
@@ -76,7 +76,7 @@ bool USMDialogueTransition::CanEnterTransition_Implementation() const
 		return false;
 	}
 	
-	if (USMStateInstance* PreviousState = GetPreviousStateInstance())
+	if (USMStateInstance_Base* PreviousState = GetPreviousStateInstance())
 	{
 		// Don't want to exit a state machine early.
 		if (PreviousState->IsStateMachine())
