@@ -131,7 +131,7 @@ void USMDialogueNode::GetAvailableChoices(TArray<USMDialogueChoiceNode*>& Choice
 			{
 				const bool bCanEval = Transition->bCanEvaluate;
 				Transition->bCanEvaluate = true;
-				if (Transition->CanTransition())
+				if (Transition->DoesTransitionPass())
 				{
 					Choice->SetCurrentDialogueOwner(this);
 					Choices.Add(Choice);
