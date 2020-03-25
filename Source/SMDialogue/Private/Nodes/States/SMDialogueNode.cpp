@@ -35,7 +35,7 @@ void USMDialogueNode_Base::SetPreviousDialogueSpeaker(UObject* Speaker)
 
 UObject* USMDialogueNode_Base::GetDialogueSpeaker_Implementation() const
 {
-	const_cast<FSMNode_Base*>(GetOwningNode())->ExecuteGraphProperties();
+	const_cast<USMDialogueNode_Base*>(this)->EvaluateGraphProperties();
 	return PreviousDialogueSpeaker;
 }
 
