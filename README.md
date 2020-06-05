@@ -1,8 +1,18 @@
 # Logic Driver 2.0 Dialogue System
 
+## About
 [Dialogue Concepts Overview](https://logicdriver.recursoft.net/docs/pages/dialogue/)
 
 Example plugin which can be used to create dialogue systems using custom classes:
 - Dialogue Node
 - Dialogue Choice Node
 - Dialogue Transition
+
+This plugin mostly serves as a base to help get started with using dialogue in Logic Driver, or as an example on overloading classes in C++. Most of the dialogue implementation still needs to be done at the project level. Please reference the [Example Project](https://github.com/Recursoft/LogicDriver-Example) for an example implementation.
+
+## Installation
+
+- Clone or download a zip (and extract) to your PROJECT / Plugins folder
+    - In the case of the Example Project it is: `LogicDriver-Example/Plugins/LogicDriver-Dialogue`
+- If you are adding to a Blueprint only project just opening your project file should prompt to build the plugin.
+    - For a C++ project you should right click on your project file and choose Generate Visual Studio project files before opening in Visual Studio and compiling.
