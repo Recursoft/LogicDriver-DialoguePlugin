@@ -10,6 +10,10 @@ Example plugin which can be used to create dialogue systems using custom classes
 
 This plugin mostly serves as a base to help get started with using dialogue in Logic Driver, or as an example on overloading classes in C++. Most of the dialogue implementation still needs to be done at the project level. Please reference the [Example Project](https://github.com/Recursoft/LogicDriver-Example) for an example implementation.
 
+## Requirements
+
+- This requires [Logic Driver Pro 2.0](https://www.unrealengine.com/marketplace/en-US/product/logic-driver-state-machine-blueprint-editor) installed at the engine level (such as by downloading from the Unreal Marketplace) or at the project level.
+
 ## Installation
 
 - Clone or download a zip (and extract) to your PROJECT / Plugins folder
