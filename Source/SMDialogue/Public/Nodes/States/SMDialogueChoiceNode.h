@@ -5,7 +5,7 @@
 #include "SMDialogueNode.h"
 #include "SMDialogueChoiceNode.generated.h"
 
-UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Extended)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Choice Node"))
+UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Choice Node"))
 class SMDIALOGUE_API USMDialogueChoiceNode : public USMDialogueNode_Base
 {
 public:

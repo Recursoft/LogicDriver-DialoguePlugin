@@ -37,7 +37,7 @@ protected:
 };
 
 
-UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Extended)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Node"))
+UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Node"))
 class SMDIALOGUE_API USMDialogueNode : public USMDialogueNode_Base
 {
 public:

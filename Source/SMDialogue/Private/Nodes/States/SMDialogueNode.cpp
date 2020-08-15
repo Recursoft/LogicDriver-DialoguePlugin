@@ -4,7 +4,9 @@
 #include "SMDialogueNode.h"
 #include "SMState.h"
 #include "SMTransition.h"
+#include "SMConduitInstance.h"
 #include "SMDialogueChoiceNode.h"
+#include "SMDialogueUtils.h"
 
 
 USMDialogueNode_Base::USMDialogueNode_Base() : Super()
@@ -62,23 +64,7 @@ void USMDialogueNode::GetAllDialogueNodes(TArray<USMDialogueNode*>& OutDialogueN
 void USMDialogueNode::GetAllConnectedDialogueNodes(TArray<USMDialogueNode*>& OutDialogueNodes,
 	bool bBreakOnChoices) const
 {
-	TArray<UClass*> RequiredTypes;
-	RequiredTypes.Add(USMDialogueNode::StaticClass());
-
-	if (!bBreakOnChoices)
-	{
-		RequiredTypes.Add(USMDialogueChoiceNode::StaticClass());
-	}
-
-	TArray<USMNodeInstance*> OutNodes;
-	GetAllNodesOfType(OutNodes, USMDialogueNode::StaticClass(), true, RequiredTypes);
-	for (USMNodeInstance* OutNode : OutNodes)
-	{
-		if (USMDialogueNode* Node = Cast<USMDialogueNode>(OutNode))
-		{
-			OutDialogueNodes.Add(Node);
-		}
-	}
+	USMDialogueUtils::GetAllConnectedDialogueNodes(this, OutDialogueNodes, bBreakOnChoices);
 }
 
 void USMDialogueNode::GetAllDialogueSpeakers(TArray<UObject*>& Speakers, bool bConnectedOnly,

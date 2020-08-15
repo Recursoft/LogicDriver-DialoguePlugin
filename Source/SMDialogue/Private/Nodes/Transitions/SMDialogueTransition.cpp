@@ -3,6 +3,7 @@
 
 #include "SMDialogueTransition.h"
 #include "SMDialogueChoiceNode.h"
+#include "SMDialogueUtils.h"
 
 USMDialogueTransition::USMDialogueTransition() : Super()
 {
@@ -14,12 +15,28 @@ USMDialogueTransition::USMDialogueTransition() : Super()
 
 bool USMDialogueTransition::IsGoingToChoiceNode() const
 {
+	bool bSuccess = false;
 	if(USMStateInstance_Base* Next = GetNextStateInstance())
 	{
-		return Next->GetClass()->IsChildOf<USMDialogueChoiceNode>();
+		bSuccess = Next->GetClass()->IsChildOf<USMDialogueChoiceNode>();
+
+		if (!bSuccess)
+		{
+			TArray<USMDialogueNode*> OutNodes;
+			USMDialogueUtils::GetAllConnectedDialogueNodes(Next, OutNodes, false);
+			for (USMDialogueNode* OutNode : OutNodes)
+			{
+				// This could have regular dialogue nodes too, verify a choice is present.
+				if (OutNode->GetClass()->IsChildOf<USMDialogueChoiceNode>())
+				{
+					bSuccess = true;
+					break;
+				}
+			}
+		}
 	}
 
-	return false;
+	return bSuccess;
 }
 
 bool USMDialogueTransition::IsLeavingChoiceNode() const
@@ -34,12 +51,19 @@ bool USMDialogueTransition::IsLeavingChoiceNode() const
 
 bool USMDialogueTransition::IsGoingToDialogueNode(bool bIncludeChoiceAsDialogue) const
 {
+	bool bSuccess = false;
 	if (USMStateInstance_Base* Next = GetNextStateInstance())
 	{
-		return bIncludeChoiceAsDialogue ? Next->GetClass()->IsChildOf<USMDialogueNode_Base>() : Next->GetClass()->IsChildOf<USMDialogueNode>();
+		bSuccess = bIncludeChoiceAsDialogue ? Next->GetClass()->IsChildOf<USMDialogueNode_Base>() : Next->GetClass()->IsChildOf<USMDialogueNode>();
+		if (!bSuccess)
+		{
+			TArray<USMDialogueNode*> OutNodes;
+			USMDialogueUtils::GetAllConnectedDialogueNodes(Next, OutNodes, !bIncludeChoiceAsDialogue);
+			bSuccess = OutNodes.Num() > 0;
+		}
 	}
 
-	return false;
+	return bSuccess;
 }
 
 bool USMDialogueTransition::IsLeavingDialogueNode(bool bIncludeChoiceAsDialogue) const
