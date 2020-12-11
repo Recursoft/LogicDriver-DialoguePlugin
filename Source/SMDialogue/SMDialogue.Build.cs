@@ -38,6 +38,16 @@ public class SMDialogue : ModuleRules
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
+   
+        if (Target.Type == TargetType.Editor)
+        {
+            PublicDependencyModuleNames.AddRange(
+            new string[]
+            {
+                "SlateCore",
+            }
+            );
+        }
 
         PrivateDependencyModuleNames.AddRange(
 			new string[]

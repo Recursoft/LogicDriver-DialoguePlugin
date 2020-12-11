@@ -1,6 +1,4 @@
 // Copyright Recursoft LLC 2019-2020. All Rights Reserved.
-#pragma once
-
 #include "SMDialogueNode.h"
 #include "SMState.h"
 #include "SMTransition.h"

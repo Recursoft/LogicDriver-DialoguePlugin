@@ -1,9 +1,8 @@
 // Copyright Recursoft LLC 2019-2020. All Rights Reserved.
-#pragma once
-
 #include "SMDialogueTransition.h"
 #include "SMDialogueChoiceNode.h"
 #include "SMDialogueUtils.h"
+
 
 USMDialogueTransition::USMDialogueTransition() : Super()
 {

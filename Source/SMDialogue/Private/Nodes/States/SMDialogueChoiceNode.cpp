@@ -1,7 +1,6 @@
 // Copyright Recursoft LLC 2019-2020. All Rights Reserved.
-#pragma once
-
 #include "SMDialogueChoiceNode.h"
+
 
 USMDialogueChoiceNode::USMDialogueChoiceNode() : Super()
 {
