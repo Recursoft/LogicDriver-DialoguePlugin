@@ -1,7 +1,6 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "EngineVersion": "4.25.0",
   "VersionName": "1.0.1",
   "FriendlyName": "Logic Driver - Dialogues",
   "Description": "Create a dialogue system using state machines.",
