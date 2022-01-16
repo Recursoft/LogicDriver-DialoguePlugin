@@ -6,7 +6,7 @@
 #include "SMTextGraphProperty.h"
 #include "SMDialogueNode.generated.h"
 
-UCLASS(meta = (DisplayName = "Dialogue Node Base"))
+UCLASS(Abstract, meta = (DisplayName = "Dialogue Node Base"))
 class SMDIALOGUE_API USMDialogueNode_Base : public USMStateInstance
 {
 public:
@@ -37,7 +37,7 @@ protected:
 };
 
 
-UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Node"))
+UCLASS(Abstract, Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueNode), meta = (DisplayName = "Dialogue Node"))
 class SMDIALOGUE_API USMDialogueNode : public USMDialogueNode_Base
 {
 public:

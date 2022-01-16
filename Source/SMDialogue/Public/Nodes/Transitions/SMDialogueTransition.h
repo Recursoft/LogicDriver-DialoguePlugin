@@ -6,7 +6,7 @@
 #include "SMDialogueTransition.generated.h"
 
 
-UCLASS(Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueTransition), meta = (DisplayName = "Dialogue Transition"))
+UCLASS(Abstract, Blueprintable, BlueprintType, classGroup = "Dialogue (SM Dialogue)", hideCategories = (SMDialogueTransition), meta = (DisplayName = "Dialogue Transition"))
 class SMDIALOGUE_API USMDialogueTransition : public USMTransitionInstance
 {
 public:

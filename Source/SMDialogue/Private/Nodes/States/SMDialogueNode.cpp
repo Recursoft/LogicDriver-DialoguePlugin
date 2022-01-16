@@ -14,11 +14,15 @@ USMDialogueNode_Base::USMDialogueNode_Base() : Super()
 	NodeDescription.Category = FText::FromString("Dialogue");
 	DialogueBody.WidgetInfo.DefaultText = FText::FromString("Dialogue");
 	DialogueBody.WidgetInfo.bConsiderForDefaultWidget = true;
-	DialogueBody.WidgetInfo.DisplayOrder = 1;
 	bDisplayNameWidget = false;
 	bUseCustomColors = true;
 	NodeColor = FLinearColor(0.1f, 0.62f, 1.f, 0.7f);
 	NodeEndStateColor = FLinearColor(1.f, 1.f, 1.f, 0.7f);
+
+#if ENGINE_MAJOR_VERSION >= 4 && ENGINE_MINOR_VERSION >= 26
+	// Available in Logic Driver Pro 2.5+ only.
+	bSkipNativeEditorConstructionScripts = true;
+#endif
 #endif
 }
 

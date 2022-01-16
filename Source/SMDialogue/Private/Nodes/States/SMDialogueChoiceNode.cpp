@@ -9,7 +9,6 @@ USMDialogueChoiceNode::USMDialogueChoiceNode() : Super()
 	bDisplayNameWidget = false;
 	DialogueBody.WidgetInfo.MinWidth = 75;
 	DialogueBody.WidgetInfo.MinHeight = 25;
-	DialogueBody.WidgetInfo.DisplayOrder = 1;
 	NodeColor = FLinearColor(0.5f, 0.9f, 1.f, 0.7f);
 #endif
 }
