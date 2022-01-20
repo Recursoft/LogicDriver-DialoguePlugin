@@ -19,7 +19,7 @@ USMDialogueNode_Base::USMDialogueNode_Base() : Super()
 	NodeColor = FLinearColor(0.1f, 0.62f, 1.f, 0.7f);
 	NodeEndStateColor = FLinearColor(1.f, 1.f, 1.f, 0.7f);
 
-#if ENGINE_MAJOR_VERSION >= 4 && ENGINE_MINOR_VERSION >= 26
+#if ENGINE_MAJOR_VERSION >= 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	// Available in Logic Driver Pro 2.5+ only.
 	bSkipNativeEditorConstructionScripts = true;
 #endif
