@@ -6,6 +6,7 @@
 #include "SMDialogueChoiceNode.h"
 #include "SMDialogueUtils.h"
 
+#include "Launch/Resources/Version.h"
 
 USMDialogueNode_Base::USMDialogueNode_Base() : Super()
 {
