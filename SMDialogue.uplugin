@@ -1,8 +1,8 @@
 {
   "FileVersion": 3,
-  "Version": 2,
-  "VersionName": "1.1.0",
-  "FriendlyName": "Logic Driver - Dialogues",
+  "Version": 3,
+  "VersionName": "1.1.1",
+  "FriendlyName": "Logic Driver - Dialogue",
   "Description": "Create a dialogue system using state machines.",
   "Category": "Editor",
   "CreatedBy": "Recursoft",
@@ -11,25 +11,13 @@
   "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9d8db9962594400988f8ddd3fb83cd88",
   "SupportURL": "https://recursoft.net/logicdriver",
   "CanContainContent": true,
-  "IsBetaVersion": true,
+  "IsBetaVersion": false,
   "Installed": true,
   "Modules": [
     {
       "Name": "SMDialogue",
       "Type": "Runtime",
-      "LoadingPhase": "PreDefault",
-      "WhitelistPlatforms": [
-        "Win64",
-        "Win32",
-        "Mac",
-        "Linux",
-        "PS4",
-        "XboxOne",
-        "Switch",
-        "Android",
-        "IOS",
-        "TVOS"
-      ]
+      "LoadingPhase": "PreDefault"
     }
   ],
   "Plugins": [
