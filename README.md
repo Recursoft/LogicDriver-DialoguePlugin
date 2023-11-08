@@ -1,7 +1,7 @@
 # Logic Driver Pro Dialogue Plugin
 
 ## About
-[Dialogue Concepts Overview](https://logicdriver.com/docs/pages/dialogue/)
+[Dialogue Concepts Overview](https://logicdriver.com/docs/guides/dialogue/)
 
 Example plugin which can be used to create dialogue systems using custom classes:
 - Dialogue Node
